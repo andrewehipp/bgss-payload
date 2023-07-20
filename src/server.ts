@@ -1,5 +1,6 @@
 import express from 'express';
 import payload from 'payload';
+import { mediaManagement } from "payload-cloudinary-plugin";
 
 require('dotenv').config();
 const app = express();
@@ -9,6 +10,12 @@ app.get('/', (_, res) => {
   res.redirect('/admin');
 });
 
+app.use(mediaManagement({ 
+  cloud_name: process.env.CLOUDFRONT_CLOUD_NAME, 
+  api_key: process.env.CLOUDFRONT_API_KEY, 
+  api_secret: process.env.CLOUDFRONT_API_SECRET 
+}));
+          
 const start = async () => {
   // Initialize Payload
   await payload.init({
