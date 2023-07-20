@@ -18,6 +18,8 @@ export interface Config {
 }
 export interface User {
   id: string;
+  name?: string;
+  roles?: 'admin' | 'editor';
   updatedAt: string;
   createdAt: string;
   email: string;

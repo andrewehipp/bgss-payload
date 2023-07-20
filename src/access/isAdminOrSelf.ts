@@ -1,6 +1,6 @@
 // https://github.com/payloadcms/access-control-demo/blob/master/src/access/isAdminOrSelf.ts
 import { Access } from "payload/types";
-import { User } from "../../payload-types";
+import { User } from "../payload-types";
 
 export const isAdminOrSelf: Access<any, User> = ({ req: { user } }) => {
   // Need to be logged in
