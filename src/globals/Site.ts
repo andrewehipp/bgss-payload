@@ -22,17 +22,108 @@ const Site: GlobalConfig = {
   },
   fields: [
     {
-      name: "logo",
-      type: "upload",
-      relationTo: Media.slug,
-    },
-    {
-      name: "menuItems",
-      type: "blocks",
-      blocks: [
-        Link,
+      type: 'collapsible',
+      label: 'Header',
+      admin: {
+        initCollapsed: true,
+      },
+      fields: [
+        {
+          name: "menuItems",
+          type: "blocks",
+          blocks: [
+            {
+              ...Link,
+              fields: [
+                ...Link.fields,
+                // {
+                //   type: 'array',
+                //   name: 'Submenu',
+                //   admin: {
+                //     description: "If Submenu items are set the will render a dropdown."
+                //   },
+                //   fields: [
+                //     ...Link.fields
+                //   ]
+                // }
+              ]
+            },
+          ]
+        },
       ]
     },
+    {
+      type: 'collapsible',
+      label: 'Footer',
+      admin: {
+        initCollapsed: true,
+      },
+      fields: [
+            {
+          name: "logo",
+          type: "upload",
+          relationTo: Media.slug,
+        },
+        {
+          name: "menuItems",
+          type: "blocks",
+          blocks: [
+            {
+              ...Link,
+              fields: [
+                ...Link.fields,
+                {
+                  type: 'array',
+                  name: 'Submenu',
+                  admin: {
+                    description: "If Submenu items are set the will render a dropdown."
+                  },
+                  fields: [
+                    ...Link.fields
+                  ]
+                }
+              ]
+            },
+          ]
+        },
+      ]
+    },
+    {
+      type: 'collapsible',
+      label: 'Site Wide',
+      admin: {
+        initCollapsed: true,
+      },
+      fields: [
+        {
+          name: "logo",
+          type: "upload",
+          relationTo: Media.slug,
+        },
+        {
+          name: "menuItems",
+          type: "blocks",
+          blocks: [
+            {
+              ...Link,
+              fields: [
+                ...Link.fields,
+                {
+                  type: 'array',
+                  name: 'Submenu',
+                  admin: {
+                    description: "If Submenu items are set the will render a dropdown."
+                  },
+                  fields: [
+                    ...Link.fields
+                  ]
+                }
+              ]
+            },
+          ]
+        },
+      ]
+    }
   ],
 };
 

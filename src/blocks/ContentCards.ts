@@ -5,9 +5,9 @@ import Button from '../fields/button';
 
 import anchorField from '../fields/anchor';
 
-const ContentHero: Block = {
-	slug: 'contentHero',
-    interfaceName: 'contentHero',
+const ContentCards: Block = {
+	slug: 'contentCards',
+    interfaceName: 'contentCards',
 	// imageURL: '/media/content-hero.png',
 	fields: [
 		anchorField(),
@@ -39,4 +39,4 @@ const ContentHero: Block = {
 	],
 };
 
-export default ContentHero;
+export default ContentCards;

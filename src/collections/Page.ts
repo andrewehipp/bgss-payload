@@ -1,6 +1,7 @@
 import { CollectionConfig } from 'payload/types';
 
 import ContentHero from '../blocks/ContentHero';
+import ContentCards from '../blocks/ContentCards';
 
 const Pages: CollectionConfig = {
 	slug: 'pages',
@@ -15,6 +16,7 @@ const Pages: CollectionConfig = {
 			type: 'blocks',
 			blocks: [
 				ContentHero,
+				ContentCards,
 			]
 		},
 	],

@@ -35,6 +35,13 @@ export interface Media {
   id: string;
   alt?: string;
   description?: string;
+  cloudinary?: {
+    public_id?: string;
+    original_filename?: string;
+    format?: string;
+    secure_url?: string;
+    resource_type?: string;
+  };
   updatedAt: string;
   createdAt: string;
   url?: string;
@@ -57,39 +64,36 @@ export interface Media {
 export interface Page {
   id: string;
   slug?: string;
-  content?: ContentHero[];
+  content?: (ContentHero | ContentHero)[];
   updatedAt: string;
   createdAt: string;
 }
 export interface ContentHero {
   anchor?: string;
-  slides?: {
-    heading?: string;
-    copy?: string;
-    buttons?: {
-      label?: string;
-      linkType: 'link' | 'page';
-      link: string;
-      page: string | Page;
-      openInNewTab?: boolean;
-      color?: 'primary' | 'secondary';
-      size?: 'default' | 'small';
-      outlined?: boolean;
-      id?: string;
-    }[];
-    background?: string | Media;
-    mobileBackground?: string | Media;
-    backgroundVideo?: string | Media;
+  preheading?: string;
+  heading?: string;
+  copy?: string;
+  buttons?: {
+    label?: string;
+    linkType: 'link' | 'page';
+    link: string;
+    page: string | Page;
+    openInNewTab?: boolean;
+    option?: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'link';
+    size?: 'default' | 'xs' | 'sm' | 'lg';
+    border?: boolean;
+    classes?: string;
     id?: string;
   }[];
+  image?: string | Media;
   id?: string;
   blockName?: string;
   blockType: 'contentHero';
 }
 export interface Site {
   id: string;
-  logo?: string | Media;
   menuItems?: Link[];
+  logo?: string | Media;
   _status?: 'draft' | 'published';
   updatedAt?: string;
   createdAt?: string;
@@ -100,6 +104,14 @@ export interface Link {
   link: string;
   page: string | Page;
   openInNewTab?: boolean;
+  Submenu?: {
+    label?: string;
+    linkType: 'link' | 'page';
+    link: string;
+    page: string | Page;
+    openInNewTab?: boolean;
+    id?: string;
+  }[];
   id?: string;
   blockName?: string;
   blockType: 'link';

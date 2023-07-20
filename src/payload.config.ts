@@ -23,6 +23,6 @@ export default buildConfig({
     Site,
   ],
   typescript: {
-    outputFile: path.resolve(__dirname, 'payload-types.ts'),
+    outputFile: path.resolve(__dirname, 'payload.d.ts'),
   },
 })
