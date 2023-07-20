@@ -15,7 +15,7 @@
     "jsx": "react",
     "paths": {
       "payload/generated-types": [
-        "./src/payload-types.ts",
+        "./src/payload.d.ts",
       ],
     }
   },
