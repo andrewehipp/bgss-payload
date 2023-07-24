@@ -12,8 +12,8 @@ const ContentContact: Block = {
 	fields: [
 		anchorField(),
 		{
-			type: 'collapsible',
-			label: 'Contact Form',
+			type: 'group',
+			name: 'contactForm',
 			fields: [
 				{
 					name: 'heading',
@@ -30,34 +30,34 @@ const ContentContact: Block = {
 				{
 					name: 'body',
 					type: 'richText'
-				}
-			]
-		},
-		{
-			type: 'collapsible',
-			label: 'Contact Info',
-			fields: [
-				{
-					name: 'heading',
-					type: 'text'
-				},
-				{
-					name: 'body',
-					type: 'richText'
-				},
-				{
-					name: 'subHeader',
-					type: 'text'
-				},
-				{
-					name: 'copy',
-					type: 'text'
 				},
 				{
 					name: 'form',
 					type: 'relationship',
 					relationTo: 'forms'
 				}
+			]
+		},
+		{
+			type: 'group',
+			name: 'contactInfo',
+			fields: [
+				{
+					name: 'heading',
+					type: 'text'
+				},
+				{
+					name: 'subHeader',
+					type: 'text'
+				},
+				{
+					name: 'copy',
+					type: 'text'
+				},
+				{
+					name: 'body',
+					type: 'richText'
+				},
 			]
 		},
 	],
