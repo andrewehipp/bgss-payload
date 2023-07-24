@@ -269,11 +269,34 @@ export interface FormSubmission {
 }
 export interface Site {
   id: string;
-  menuItems?: Link[];
-  logo?: string | Media;
+  header?: {
+    menuItems?: MenuItem[];
+  };
+  footer?: {
+    logo?: string | Media;
+    menuItems?: Link[];
+  };
   _status?: 'draft' | 'published';
   updatedAt?: string;
   createdAt?: string;
+}
+export interface MenuItem {
+  label?: string;
+  linkType: 'link' | 'page';
+  link: string;
+  page: string | Page;
+  openInNewTab?: boolean;
+  submenu?: {
+    label?: string;
+    linkType: 'link' | 'page';
+    link: string;
+    page: string | Page;
+    openInNewTab?: boolean;
+    id?: string;
+  }[];
+  id?: string;
+  blockName?: string;
+  blockType: 'link';
 }
 export interface Link {
   label?: string;

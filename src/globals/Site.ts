@@ -31,11 +31,12 @@ const Site: GlobalConfig = {
           blocks: [
             {
               ...Link,
+              interfaceName: 'menuItem',
               fields: [
                 ...Link.fields,
                 {
                   type: 'array',
-                  name: 'Submenu',
+                  name: 'submenu',
                   admin: {
                     description: "If Submenu items are set the site will render them as a dropdown menu."
                   },
