@@ -1,5 +1,6 @@
 import { buildConfig } from 'payload/config';
 import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
+import formBuilder from "@payloadcms/plugin-form-builder";
 import path from 'path';
 
 // Collections
@@ -13,6 +14,9 @@ import Site from './globals/Site';
 export default buildConfig({
   plugins: [
     cloudinaryPlugin(),
+    formBuilder({
+      redirectRelationships: ["pages"],
+    }),
   ],
   collections: [
     Users,
