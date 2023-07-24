@@ -63,10 +63,12 @@ export interface Media {
 }
 export interface Page {
   id: string;
+  internalReferenceTitle: string;
   slug?: string;
-  content?: (ContentHero | ContentHero)[];
+  content?: (ContentHero | ContentCards)[];
   updatedAt: string;
   createdAt: string;
+  _status?: 'draft' | 'published';
 }
 export interface ContentHero {
   anchor?: string;
@@ -79,9 +81,8 @@ export interface ContentHero {
     link: string;
     page: string | Page;
     openInNewTab?: boolean;
-    option?: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' | 'link';
+    option?: 'default' | 'text' | 'border';
     size?: 'default' | 'xs' | 'sm' | 'lg';
-    border?: boolean;
     classes?: string;
     id?: string;
   }[];
@@ -89,6 +90,29 @@ export interface ContentHero {
   id?: string;
   blockName?: string;
   blockType: 'contentHero';
+}
+export interface ContentCards {
+  anchor?: string;
+  cards?: {
+    thumbnail?: string | Media;
+    title?: string;
+    copy?: string;
+    button?: {
+      label?: string;
+      linkType: 'link' | 'page';
+      link: string;
+      page: string | Page;
+      openInNewTab?: boolean;
+      option?: 'default' | 'text' | 'border';
+      size?: 'default' | 'xs' | 'sm' | 'lg';
+      classes?: string;
+      id?: string;
+    }[];
+    id?: string;
+  }[];
+  id?: string;
+  blockName?: string;
+  blockType: 'contentCards';
 }
 export interface Site {
   id: string;

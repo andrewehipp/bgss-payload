@@ -1,7 +1,7 @@
 import { Block } from 'payload/types';
 
 import Media from '../collections/Media';
-import Button from '../fields/button';
+import button from '../fields/button';
 
 import anchorField from '../fields/anchor';
 
@@ -26,7 +26,7 @@ const ContentHero: Block = {
 		{
 			name: "buttons",
 			type: "array",
-			fields: Button()?.fields
+			fields: button()?.fields
 		},
 		{
 			name: 'image',

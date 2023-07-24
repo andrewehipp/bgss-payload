@@ -6,7 +6,7 @@ import Link from "../blocks/Link";
 const Button = ({ overrides = {} } = {}): CollapsibleField =>
   deepMerge(
     {
-      label: "Heading",
+      label: "Button",
       type: "collapsible",
       admin: {
         initCollapsed: true,
@@ -28,30 +28,38 @@ const Button = ({ overrides = {} } = {}): CollapsibleField =>
                   label: "Default",
                   value: "default",
                 },
+                // {
+                //   label: "Primary",
+                //   value: "primary",
+                // },
+                // {
+                //   label: "Success",
+                //   value: "success",
+                // },
+                // {
+                //   label: "Info",
+                //   value: "info",
+                // },
+                // {
+                //   label: "Warning",
+                //   value: "warning",
+                // },
+                // {
+                //   label: "Danger",
+                //   value: "danger",
+                // },
+                // {
+                //   label: "Link",
+                //   value: "link",
+                // },
                 {
-                  label: "Primary",
-                  value: "primary",
+                  label: "Text",
+                  value: "text",
                 },
                 {
-                  label: "Success",
-                  value: "success",
-                },
-                {
-                  label: "Info",
-                  value: "info",
-                },
-                {
-                  label: "Warning",
-                  value: "warning",
-                },
-                {
-                  label: "Danger",
-                  value: "danger",
-                },
-                {
-                  label: "Link",
-                  value: "link",
-                },
+                  label: "Border",
+                  value: "border",
+                }
               ],
             },
             {
@@ -75,10 +83,6 @@ const Button = ({ overrides = {} } = {}): CollapsibleField =>
                   value: "lg",
                 },
               ],
-            },
-            {
-              name: "border",
-              type: "checkbox",
             },
             {
               type: "text",
