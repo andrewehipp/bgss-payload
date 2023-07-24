@@ -22,11 +22,8 @@ const Site: GlobalConfig = {
   },
   fields: [
     {
-      type: 'collapsible',
-      label: 'Header',
-      admin: {
-        initCollapsed: true,
-      },
+      type: 'group',
+      name: 'header',
       fields: [
         {
           name: "menuItems",
@@ -36,16 +33,16 @@ const Site: GlobalConfig = {
               ...Link,
               fields: [
                 ...Link.fields,
-                // {
-                //   type: 'array',
-                //   name: 'Submenu',
-                //   admin: {
-                //     description: "If Submenu items are set the will render a dropdown."
-                //   },
-                //   fields: [
-                //     ...Link.fields
-                //   ]
-                // }
+                {
+                  type: 'array',
+                  name: 'Submenu',
+                  admin: {
+                    description: "If Submenu items are set the site will render them as a dropdown menu."
+                  },
+                  fields: [
+                    ...Link.fields
+                  ]
+                }
               ]
             },
           ]
@@ -53,11 +50,8 @@ const Site: GlobalConfig = {
       ]
     },
     {
-      type: 'collapsible',
-      label: 'Footer',
-      admin: {
-        initCollapsed: true,
-      },
+      type: 'group',
+      name: 'footer',
       fields: [
             {
           name: "logo",
@@ -88,42 +82,6 @@ const Site: GlobalConfig = {
         },
       ]
     },
-    {
-      type: 'collapsible',
-      label: 'Site Wide',
-      admin: {
-        initCollapsed: true,
-      },
-      fields: [
-        {
-          name: "logo",
-          type: "upload",
-          relationTo: Media.slug,
-        },
-        {
-          name: "menuItems",
-          type: "blocks",
-          blocks: [
-            {
-              ...Link,
-              fields: [
-                ...Link.fields,
-                {
-                  type: 'array',
-                  name: 'Submenu',
-                  admin: {
-                    description: "If Submenu items are set the will render a dropdown."
-                  },
-                  fields: [
-                    ...Link.fields
-                  ]
-                }
-              ]
-            },
-          ]
-        },
-      ]
-    }
   ],
 };
 

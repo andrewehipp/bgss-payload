@@ -16,18 +16,6 @@ const ContentContact: Block = {
 			name: 'contactForm',
 			fields: [
 				{
-					name: 'heading',
-					type: 'text'
-				},
-				{
-					name: 'subHeader',
-					type: 'text'
-				},
-				{
-					name: 'copy',
-					type: 'text'
-				},
-				{
 					name: 'body',
 					type: 'richText'
 				},
@@ -42,18 +30,6 @@ const ContentContact: Block = {
 			type: 'group',
 			name: 'contactInfo',
 			fields: [
-				{
-					name: 'heading',
-					type: 'text'
-				},
-				{
-					name: 'subHeader',
-					type: 'text'
-				},
-				{
-					name: 'copy',
-					type: 'text'
-				},
 				{
 					name: 'body',
 					type: 'richText'

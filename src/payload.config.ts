@@ -11,6 +11,9 @@ import Page from './collections/Page';
 // Globals
 import Site from './globals/Site';
 
+// Endpoints
+import { siteEndpoint } from './endpoints/site';
+
 export default buildConfig({
   plugins: [
     cloudinaryPlugin(),
@@ -25,6 +28,9 @@ export default buildConfig({
   ],
   globals: [
     Site,
+  ],
+  endpoints: [
+    siteEndpoint,
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload.d.ts'),

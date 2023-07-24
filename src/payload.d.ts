@@ -67,7 +67,7 @@ export interface Page {
   id: string;
   internalReferenceTitle: string;
   slug?: string;
-  content?: (ContentHero | ContentCards)[];
+  content?: (ContentHero | ContentCards | ContentContact)[];
   updatedAt: string;
   createdAt: string;
   _status?: 'draft' | 'published';
@@ -115,6 +115,23 @@ export interface ContentCards {
   id?: string;
   blockName?: string;
   blockType: 'contentCards';
+}
+export interface ContentContact {
+  anchor?: string;
+  contactForm?: {
+    body?: {
+      [k: string]: unknown;
+    }[];
+    form?: string | Form;
+  };
+  contactInfo?: {
+    body?: {
+      [k: string]: unknown;
+    }[];
+  };
+  id?: string;
+  blockName?: string;
+  blockType: 'contentContact';
 }
 export interface Form {
   id: string;
