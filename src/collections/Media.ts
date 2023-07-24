@@ -1,5 +1,7 @@
 import { CollectionConfig } from 'payload/types';
 
+import { triggerAfterChangeWebhook, triggerDeleteWebhook } from '../hooks/triggerWebhook';
+
 const Media: CollectionConfig = {
 	slug: 'media',
 	upload: {
@@ -24,6 +26,10 @@ const Media: CollectionConfig = {
 	],
 	access: {
 		read: () => true
+	},
+	hooks: {
+		afterChange: [triggerAfterChangeWebhook],
+		afterDelete: [triggerDeleteWebhook]
 	}
 };
 

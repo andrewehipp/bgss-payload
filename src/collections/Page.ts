@@ -6,6 +6,8 @@ import ContentCards from '../blocks/ContentCards';
 import internalReferenceTitle from '../fields/internalReferenceTitle';
 import { isLoggedInOrPublished } from '../access/isLoggedInOrPublished';
 
+import { triggerAfterChangeWebhook, triggerDeleteWebhook } from '../hooks/triggerWebhook';
+
 const Pages: CollectionConfig = {
 	slug: 'pages',
 	versions: {
@@ -37,6 +39,10 @@ const Pages: CollectionConfig = {
 	],
 	access: {
 		read: isLoggedInOrPublished,
+	},
+	hooks: {
+		afterChange: [triggerAfterChangeWebhook],
+		afterDelete: [triggerDeleteWebhook]
 	}
 };
 
