@@ -5,6 +5,8 @@ import ContentTitle from '../blocks/ContentTitle';
 import ContentCards from '../blocks/ContentCards';
 import ContentContact from '../blocks/ContentContact';
 import ContentCTA from '../blocks/ContentCTA';
+import ContentFAQs from '../blocks/ContentFAQs';
+import ContentServiceList from '../blocks/ContentServiceList';
 
 import internalReferenceTitle from '../fields/internalReferenceTitle';
 import { isLoggedInOrPublished } from '../access/isLoggedInOrPublished';
@@ -40,6 +42,8 @@ const Pages: CollectionConfig = {
 				ContentCards,
 				ContentContact,
 				ContentCTA,
+				ContentFAQs,
+				ContentServiceList,
 			]
 		},
 	],

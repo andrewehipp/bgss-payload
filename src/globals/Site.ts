@@ -29,6 +29,11 @@ const Site: GlobalConfig = {
         {
           type: 'array',
           name: 'contactInfo',
+					admin: {
+						components: {
+							RowLabel: ({ data }) => data?.label
+						}	
+					},
           fields: [
             ...LinkWithIcon.fields
           ]
@@ -57,7 +62,10 @@ const Site: GlobalConfig = {
                   type: 'array',
                   name: 'submenu',
                   admin: {
-                    description: "If Submenu items are set the site will render them as a dropdown menu."
+                    description: "If Submenu items are set the site will render them as a dropdown menu.",
+                    components: {
+                      RowLabel: ({ data }) => data?.label
+                    }	
                   },
                   fields: [
                     ...Link.fields

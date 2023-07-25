@@ -67,7 +67,15 @@ export interface Page {
   id: string;
   internalReferenceTitle: string;
   slug?: string;
-  content?: (ContentHero | ContentTitle | ContentCards | ContentContact | ContentCTA)[];
+  content?: (
+    | ContentHero
+    | ContentTitle
+    | ContentCards
+    | ContentContact
+    | ContentCTA
+    | ContentFAQs
+    | ContentServiceList
+  )[];
   updatedAt: string;
   createdAt: string;
   _status?: 'draft' | 'published';
@@ -285,6 +293,54 @@ export interface ContentCTA {
   id?: string;
   blockName?: string;
   blockType: 'contentCTA';
+}
+export interface ContentFAQs {
+  anchor?: string;
+  groupsOfQuestions?: {
+    title?: string;
+    questions?: {
+      question?: string;
+      answer?: {
+        [k: string]: unknown;
+      }[];
+      id?: string;
+    }[];
+    id?: string;
+  }[];
+  sidebar?: {
+    [k: string]: unknown;
+  }[];
+  id?: string;
+  blockName?: string;
+  blockType: 'contentFAQs';
+}
+export interface ContentServiceList {
+  anchor?: string;
+  title?: string;
+  body?: {
+    [k: string]: unknown;
+  }[];
+  button?: {
+    label?: string;
+    linkType: 'link' | 'page';
+    link: string;
+    page: string | Page;
+    openInNewTab?: boolean;
+    option?: 'default' | 'text' | 'border';
+    size?: 'default' | 'xs' | 'sm' | 'lg';
+    classes?: string;
+    id?: string;
+  }[];
+  services?: {
+    title?: string;
+    body?: {
+      [k: string]: unknown;
+    }[];
+    id?: string;
+  }[];
+  id?: string;
+  blockName?: string;
+  blockType: 'contentServiceList';
 }
 export interface FormSubmission {
   id: string;
