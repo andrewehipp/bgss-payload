@@ -12,16 +12,8 @@ const ContentHero: Block = {
 	fields: [
 		anchorField(),
 		{
-			name: 'preheading',
-			type: 'text'
-		},
-		{
-			name: 'heading',
-			type: 'text'
-		},
-		{
-			name: 'copy',
-			type: 'text'
+			type: 'richText',
+			name: 'body',
 		},
 		{
 			name: "buttons",

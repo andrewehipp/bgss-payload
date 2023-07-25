@@ -79,13 +79,39 @@ const Site: GlobalConfig = {
           relationTo: Media.slug,
         },
         {
-          name: "menuItems",
+          type: 'richText',
+          name: 'contact'
+        },
+        {
+          type: "text",
+          name: 'firstMenuTitle',
+        },
+        {
           type: "blocks",
+          name: 'firstMenuLinks',
           blocks: [
             Link,
           ]
         },
-
+        {
+          type: "text",
+          name: 'secondMenuTitle',
+        },
+        {
+          type: "blocks",
+          name: 'secondMenuLinks',
+          blocks: [
+            Link,
+          ]
+        },
+        {
+          type: 'richText',
+          name: 'body'
+        },
+        {
+          type: 'text',
+          name: 'disclaimer'
+        }
       ]
     },
   ],

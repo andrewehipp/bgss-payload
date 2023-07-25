@@ -67,16 +67,16 @@ export interface Page {
   id: string;
   internalReferenceTitle: string;
   slug?: string;
-  content?: (ContentHero | ContentCards | ContentContact | ContentCTA)[];
+  content?: (ContentHero | ContentTitle | ContentCards | ContentContact | ContentCTA)[];
   updatedAt: string;
   createdAt: string;
   _status?: 'draft' | 'published';
 }
 export interface ContentHero {
   anchor?: string;
-  preheading?: string;
-  heading?: string;
-  copy?: string;
+  body?: {
+    [k: string]: unknown;
+  }[];
   buttons?: {
     label?: string;
     linkType: 'link' | 'page';
@@ -92,6 +92,16 @@ export interface ContentHero {
   id?: string;
   blockName?: string;
   blockType: 'contentHero';
+}
+export interface ContentTitle {
+  anchor?: string;
+  title?: string;
+  body?: {
+    [k: string]: unknown;
+  }[];
+  id?: string;
+  blockName?: string;
+  blockType: 'contentTitle';
 }
 export interface ContentCards {
   anchor?: string;
@@ -306,7 +316,17 @@ export interface Site {
   };
   footer?: {
     logo?: string | Media;
-    menuItems?: Link[];
+    contact?: {
+      [k: string]: unknown;
+    }[];
+    firstMenuTitle?: string;
+    firstMenuLinks?: Link[];
+    secondMenuTitle?: string;
+    secondMenuLinks?: Link[];
+    body?: {
+      [k: string]: unknown;
+    }[];
+    disclaimer?: string;
   };
   _status?: 'draft' | 'published';
   updatedAt?: string;
