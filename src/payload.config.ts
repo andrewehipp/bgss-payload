@@ -35,4 +35,12 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(__dirname, 'payload.d.ts'),
   },
+  cors: [
+    'http://localhost:3001',
+    'http://localhost:3000',
+    'https://bgsoilservices.com',
+    'https://www.bgsoilservices.com',
+    'https://breakinggroundsoilservices.com',
+    'https://www.breakinggroundsoilservices.com',
+  ]
 })
