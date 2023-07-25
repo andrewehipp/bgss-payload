@@ -67,7 +67,7 @@ export interface Page {
   id: string;
   internalReferenceTitle: string;
   slug?: string;
-  content?: (ContentHero | ContentCards | ContentContact)[];
+  content?: (ContentHero | ContentCards | ContentContact | ContentCTA)[];
   updatedAt: string;
   createdAt: string;
   _status?: 'draft' | 'published';
@@ -256,6 +256,26 @@ export interface Form {
   updatedAt: string;
   createdAt: string;
 }
+export interface ContentCTA {
+  anchor?: string;
+  body?: {
+    [k: string]: unknown;
+  }[];
+  buttons?: {
+    label?: string;
+    linkType: 'link' | 'page';
+    link: string;
+    page: string | Page;
+    openInNewTab?: boolean;
+    option?: 'default' | 'text' | 'border';
+    size?: 'default' | 'xs' | 'sm' | 'lg';
+    classes?: string;
+    id?: string;
+  }[];
+  id?: string;
+  blockName?: string;
+  blockType: 'contentCTA';
+}
 export interface FormSubmission {
   id: string;
   form: string | Form;
@@ -269,7 +289,19 @@ export interface FormSubmission {
 }
 export interface Site {
   id: string;
+  contact?: {
+    contactInfo?: {
+      label?: string;
+      linkType: 'link' | 'page';
+      link: string;
+      page: string | Page;
+      openInNewTab?: boolean;
+      icon?: string;
+      id?: string;
+    }[];
+  };
   header?: {
+    logo?: string | Media;
     menuItems?: MenuItem[];
   };
   footer?: {
@@ -304,14 +336,6 @@ export interface Link {
   link: string;
   page: string | Page;
   openInNewTab?: boolean;
-  Submenu?: {
-    label?: string;
-    linkType: 'link' | 'page';
-    link: string;
-    page: string | Page;
-    openInNewTab?: boolean;
-    id?: string;
-  }[];
   id?: string;
   blockName?: string;
   blockType: 'link';

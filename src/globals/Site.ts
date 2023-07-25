@@ -2,6 +2,7 @@ import { GlobalConfig } from "payload/types";
 
 import Media from '../collections/Media';
 import Link from '../blocks/Link';
+import LinkWithIcon from '../blocks/LinkWithIcon';
 
 import { isLoggedInOrPublished } from '../access/isLoggedInOrPublished';
 import { isAdminOrEditor } from '../access/isAdminOrEditor';
@@ -23,8 +24,26 @@ const Site: GlobalConfig = {
   fields: [
     {
       type: 'group',
+      name: 'contact',
+      fields: [
+        {
+          type: 'array',
+          name: 'contactInfo',
+          fields: [
+            ...LinkWithIcon.fields
+          ]
+        }
+      ]
+    },
+    {
+      type: 'group',
       name: 'header',
       fields: [
+        {
+          name: "logo",
+          type: "upload",
+          relationTo: Media.slug,
+        },
         {
           name: "menuItems",
           type: "blocks",
@@ -54,7 +73,7 @@ const Site: GlobalConfig = {
       type: 'group',
       name: 'footer',
       fields: [
-            {
+        {
           name: "logo",
           type: "upload",
           relationTo: Media.slug,
@@ -63,24 +82,10 @@ const Site: GlobalConfig = {
           name: "menuItems",
           type: "blocks",
           blocks: [
-            {
-              ...Link,
-              fields: [
-                ...Link.fields,
-                {
-                  type: 'array',
-                  name: 'Submenu',
-                  admin: {
-                    description: "If Submenu items are set the will render a dropdown."
-                  },
-                  fields: [
-                    ...Link.fields
-                  ]
-                }
-              ]
-            },
+            Link,
           ]
         },
+
       ]
     },
   ],

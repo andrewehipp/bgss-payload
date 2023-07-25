@@ -11,11 +11,10 @@ const LinkWithIcon: Block = {
 		...Link.fields,
 		{
 			name: 'icon',
-			type: 'upload',
-			relationTo: Media.slug,
-			filterOptions: {
-				mimeType: { contains: 'image' },
-			},
+			type: 'text',
+			admin: {
+				description: 'Icons listed here. https://fontawesome.com/v4/examples/'
+			}
 		},
 	],
 };

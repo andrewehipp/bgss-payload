@@ -3,6 +3,7 @@ import { CollectionConfig } from 'payload/types';
 import ContentHero from '../blocks/ContentHero';
 import ContentCards from '../blocks/ContentCards';
 import ContentContact from '../blocks/ContentContact';
+import ContentCTA from '../blocks/ContentCTA';
 
 import internalReferenceTitle from '../fields/internalReferenceTitle';
 import { isLoggedInOrPublished } from '../access/isLoggedInOrPublished';
@@ -36,6 +37,7 @@ const Pages: CollectionConfig = {
 				ContentHero,
 				ContentCards,
 				ContentContact,
+				ContentCTA,
 			]
 		},
 	],
