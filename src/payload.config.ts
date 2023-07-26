@@ -25,6 +25,9 @@ export default buildConfig({
       collections: [
         'pages',
       ],
+      globals: [
+        'site'
+      ],
       uploadsCollection: 'media',
       // generateTitle: ({ doc }) => `${doc?.title?.value} | Breaking Ground Soil Services`,
       // generateDescription: ({ doc }) => doc?.excerpt

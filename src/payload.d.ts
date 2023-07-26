@@ -403,6 +403,11 @@ export interface Site {
     }[];
     disclaimer?: string;
   };
+  meta?: {
+    title?: string;
+    description?: string;
+    image?: string | Media;
+  };
   _status?: 'draft' | 'published';
   updatedAt?: string;
   createdAt?: string;
