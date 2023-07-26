@@ -1,6 +1,7 @@
 import { buildConfig } from 'payload/config';
 import cloudinaryPlugin from "payload-cloudinary-plugin/dist/plugins";
 import formBuilder from "@payloadcms/plugin-form-builder";
+import seo from '@payloadcms/plugin-seo';
 import path from 'path';
 
 // Collections
@@ -20,6 +21,14 @@ export default buildConfig({
     formBuilder({
       redirectRelationships: ["pages"],
     }),
+    seo({
+      collections: [
+        'pages',
+      ],
+      uploadsCollection: 'media',
+      // generateTitle: ({ doc }) => `${doc?.title?.value} | Breaking Ground Soil Services`,
+      // generateDescription: ({ doc }) => doc?.excerpt
+    })
   ],
   collections: [
     Users,
@@ -44,5 +53,5 @@ export default buildConfig({
     'https://www.breakinggroundsoilservices.com',
     'https://bgss-front-develop.vercel.app',
     'https://bgss-front.vercel.app'
-  ]
+  ],
 })

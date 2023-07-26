@@ -77,6 +77,11 @@ export interface Page {
     | ContentFAQs
     | ContentServiceList
   )[];
+  meta?: {
+    title?: string;
+    description?: string;
+    image?: string | Media;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: 'draft' | 'published';
