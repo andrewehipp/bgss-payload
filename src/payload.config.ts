@@ -42,5 +42,7 @@ export default buildConfig({
     'https://www.bgsoilservices.com',
     'https://breakinggroundsoilservices.com',
     'https://www.breakinggroundsoilservices.com',
+    'https://bgss-front-develop.vercel.app',
+    'https://bgss-front.vercel.app'
   ]
 })
