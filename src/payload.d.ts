@@ -71,6 +71,7 @@ export interface Page {
     | ContentHero
     | ContentTitle
     | ContentCards
+    | ContentBoxes
     | ContentContact
     | ContentCTA
     | ContentFAQs
@@ -133,6 +134,19 @@ export interface ContentCards {
   id?: string;
   blockName?: string;
   blockType: 'contentCards';
+}
+export interface ContentBoxes {
+  anchor?: string;
+  boxes?: {
+    body?: {
+      [k: string]: unknown;
+    }[];
+    appearance?: 'default' | 'border' | 'boxed' | 'inversed';
+    id?: string;
+  }[];
+  id?: string;
+  blockName?: string;
+  blockType: 'contentBoxes';
 }
 export interface ContentContact {
   anchor?: string;

@@ -3,6 +3,7 @@ import { CollectionConfig } from 'payload/types';
 import ContentHero from '../blocks/ContentHero';
 import ContentTitle from '../blocks/ContentTitle';
 import ContentCards from '../blocks/ContentCards';
+import ContentBoxes from '../blocks/ContentBoxes';
 import ContentContact from '../blocks/ContentContact';
 import ContentCTA from '../blocks/ContentCTA';
 import ContentFAQs from '../blocks/ContentFAQs';
@@ -40,6 +41,7 @@ const Pages: CollectionConfig = {
 				ContentHero,
 				ContentTitle,
 				ContentCards,
+				ContentBoxes,
 				ContentContact,
 				ContentCTA,
 				ContentFAQs,
