@@ -13,6 +13,7 @@ import internalReferenceTitle from '../fields/internalReferenceTitle';
 import { isLoggedInOrPublished } from '../access/isLoggedInOrPublished';
 
 import { triggerAfterChangeWebhook, triggerDeleteWebhook } from '../hooks/triggerWebhook';
+import ContentServiceItem from '../blocks/ContentServiceItem';
 
 const Pages: CollectionConfig = {
 	slug: 'pages',
@@ -46,6 +47,7 @@ const Pages: CollectionConfig = {
 				ContentCTA,
 				ContentFAQs,
 				ContentServiceList,
+				ContentServiceItem,
 			]
 		},
 	],

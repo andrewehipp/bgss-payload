@@ -76,6 +76,7 @@ export interface Page {
     | ContentCTA
     | ContentFAQs
     | ContentServiceList
+    | ContentServiceItem
   )[];
   meta?: {
     title?: string;
@@ -360,6 +361,35 @@ export interface ContentServiceList {
   id?: string;
   blockName?: string;
   blockType: 'contentServiceList';
+}
+export interface ContentServiceItem {
+  anchor?: string;
+  smallTitle?: string;
+  title?: string;
+  body?: {
+    [k: string]: unknown;
+  }[];
+  items?: {
+    title?: string;
+    copy?: string;
+    id?: string;
+  }[];
+  button?: {
+    label?: string;
+    linkType: 'link' | 'page';
+    link: string;
+    page: string | Page;
+    openInNewTab?: boolean;
+    option?: 'default' | 'text' | 'border';
+    size?: 'default' | 'xs' | 'sm' | 'lg';
+    classes?: string;
+    id?: string;
+  }[];
+  image?: string | Media;
+  flipLayout?: boolean;
+  id?: string;
+  blockName?: string;
+  blockType: 'contentServiceItem';
 }
 export interface FormSubmission {
   id: string;
