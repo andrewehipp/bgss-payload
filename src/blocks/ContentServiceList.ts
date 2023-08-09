@@ -8,7 +8,7 @@ import anchorField from '../fields/anchor';
 const ContentServiceList: Block = {
 	slug: 'contentServiceList',
     interfaceName: 'contentServiceList',
-	// imageURL: '/media/content-hero.png',
+	imageURL: 'https://raw.githubusercontent.com/andrewehipp/bgss-payload/44f2f8b2129d5ec076d6347580b4f7d852d9d265/assets/content-service-list.png',
 	fields: [
 		anchorField(),
 		{
