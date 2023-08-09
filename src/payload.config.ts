@@ -12,10 +12,26 @@ import Page from './collections/Page';
 // Globals
 import Site from './globals/Site';
 
+// Components
+import BeforeDashboard from './components/BeforeDashboard';
+import AfterDashboard from './components/AfterDashboard';
+import BeforeLogin from './components/BeforeLogin';
+
 // Endpoints
 import { siteEndpoint } from './endpoints/site';
 
 export default buildConfig({
+	admin: {
+		css: path.resolve(__dirname, 'index.scss'),
+    components: {
+      beforeDashboard: [BeforeDashboard],
+      afterDashboard: [AfterDashboard],
+      graphics: {
+        Icon: BeforeLogin,
+        Logo: BeforeLogin,
+      },
+    },
+	},
   plugins: [
     cloudinaryPlugin(),
     formBuilder({

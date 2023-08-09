@@ -34,6 +34,9 @@ const Pages: CollectionConfig = {
 			name: 'slug',
 			type: 'text',
 			unique: true,
+			admin: {
+				description: 'A unique relative url for the page to live at. Needs to be lowercase hyphenated. Examples: `services` and `services/lab-services`. `index` is a preserved value for the home page.',
+			},
 		},
 		{
 			name: 'content',
