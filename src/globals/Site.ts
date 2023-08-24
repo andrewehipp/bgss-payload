@@ -6,6 +6,7 @@ import LinkWithIcon from '../blocks/LinkWithIcon';
 
 import { isLoggedInOrPublished } from '../access/isLoggedInOrPublished';
 import { isAdminOrEditor } from '../access/isAdminOrEditor';
+import { triggerAfterChangeWebhook } from "../hooks/triggerWebhook";
 
 const Site: GlobalConfig = {
   slug: "site",
@@ -123,6 +124,9 @@ const Site: GlobalConfig = {
       ]
     },
   ],
+	hooks: {
+		afterChange: [triggerAfterChangeWebhook],
+	}
 };
 
 export default Site;
