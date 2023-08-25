@@ -5,6 +5,7 @@ import ContentTitle from '../blocks/ContentTitle';
 import ContentCards from '../blocks/ContentCards';
 import ContentBoxes from '../blocks/ContentBoxes';
 import ContentContact from '../blocks/ContentContact';
+import ContentContactForm from '../blocks/ContentContactForm';
 import ContentCTA from '../blocks/ContentCTA';
 import ContentFAQs from '../blocks/ContentFAQs';
 import ContentServiceList from '../blocks/ContentServiceList';
@@ -47,6 +48,7 @@ const Pages: CollectionConfig = {
 				ContentCards,
 				ContentBoxes,
 				ContentContact,
+				ContentContactForm,
 				ContentCTA,
 				ContentFAQs,
 				ContentServiceList,

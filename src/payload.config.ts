@@ -32,6 +32,17 @@ export default buildConfig({
       },
     },
 	},
+  email: {
+    fromName: 'Breaking Ground Soil Services',
+    fromAddress: 'contact@bgsoilservices.com',
+    transportOptions: {
+      service: 'mailgun',
+      auth: {
+        user: process.env.MAILGUN_USER,
+        pass: process.env.MAILGUN_PASS,
+      },
+    }
+  },
   plugins: [
     cloudinaryPlugin(),
     formBuilder({

@@ -73,6 +73,7 @@ export interface Page {
     | ContentCards
     | ContentBoxes
     | ContentContact
+    | ContentContactForm
     | ContentCTA
     | ContentFAQs
     | ContentServiceList
@@ -156,6 +157,15 @@ export interface ContentBoxes {
 }
 export interface ContentContact {
   anchor?: string;
+  body?: {
+    [k: string]: unknown;
+  }[];
+  id?: string;
+  blockName?: string;
+  blockType: 'contentContact';
+}
+export interface ContentContactForm {
+  anchor?: string;
   contactForm?: {
     body?: {
       [k: string]: unknown;
@@ -169,7 +179,7 @@ export interface ContentContact {
   };
   id?: string;
   blockName?: string;
-  blockType: 'contentContact';
+  blockType: 'contentContactForm';
 }
 export interface Form {
   id: string;

@@ -1,8 +1,5 @@
 import { Block } from 'payload/types';
 
-import Media from '../collections/Media';
-import button from '../fields/button';
-
 import anchorField from '../fields/anchor';
 
 const ContentContact: Block = {
@@ -12,29 +9,8 @@ const ContentContact: Block = {
 	fields: [
 		anchorField(),
 		{
-			type: 'group',
-			name: 'contactForm',
-			fields: [
-				{
-					name: 'body',
-					type: 'richText'
-				},
-				{
-					name: 'form',
-					type: 'relationship',
-					relationTo: 'forms'
-				}
-			]
-		},
-		{
-			type: 'group',
-			name: 'contactInfo',
-			fields: [
-				{
-					name: 'body',
-					type: 'richText'
-				},
-			]
+			name: 'body',
+			type: 'richText'
 		},
 	],
 };
